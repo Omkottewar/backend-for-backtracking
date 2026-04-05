@@ -1,0 +1,98 @@
+# -----------------------------
+# Node.js
+# -----------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+
+# Build folders
+dist/
+build/
+coverage/
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# -----------------------------
+# Flutter / Dart
+# -----------------------------
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+
+build/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+
+# Flutter generated files
+.flutter-plugins
+.metadata
+
+# Android
+android/.gradle/
+android/app/debug
+android/app/profile
+android/app/release
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Generated.xcconfig
+
+# -----------------------------
+# IDE Files
+# -----------------------------
+.vscode/
+.idea/
+*.iml
+
+# -----------------------------
+# OS Generated Files
+# -----------------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# Temporary Files
+# -----------------------------
+*.tmp
+*.temp
+*.swp
+
+# -----------------------------
+# Database
+# -----------------------------
+*.sqlite
+*.db
+
+# -----------------------------
+# Secrets
+# -----------------------------
+secrets.json
+serviceAccountKey.json
+
+# -----------------------------
+# Misc
+# -----------------------------
+.cache/
+tmp/
