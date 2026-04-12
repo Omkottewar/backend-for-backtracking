@@ -7,6 +7,7 @@ CREATE TABLE "User" (
     "address" TEXT NOT NULL,
     "state" TEXT NOT NULL,
     "city" TEXT NOT NULL,
+    "zip" TEXT,
     "country" TEXT NOT NULL DEFAULT 'United States',
     "identificationNo" TEXT NOT NULL,
     "passwordHash" TEXT NOT NULL,

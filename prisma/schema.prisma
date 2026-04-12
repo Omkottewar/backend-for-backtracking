@@ -15,6 +15,7 @@ model User {
   address            String
   state              String
   city               String
+  zip                String?
   country            String          @default("United States")
   identificationNo   String
   passwordHash       String
