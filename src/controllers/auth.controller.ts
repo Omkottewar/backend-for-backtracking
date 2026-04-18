@@ -203,18 +203,25 @@ export const getProfile = async (req: any, res: Response) => {
     return res.status(500).json({ message: 'Server error getting profile', error: error.message });
   }
 };
-
+// AFTER
 export const updateProfile = async (req: any, res: Response) => {
   try {
-    const { fullName, phone, address, state, city, zip, identificationNo } = req.body;
-    const profilePicUrl = req.file ? `/uploads/${req.file.filename}` : undefined;
+    const { fullName, phone, address, state, city, zip } = req.body;
+   const profilePicUrl = req.file ? req.file.path : undefined;
 
-    const dataToUpdate: any = { fullName, phone, address, state, city, zip, identificationNo };
-    if (profilePicUrl) dataToUpdate.profilePicUrl = profilePicUrl;
+    // Only include a field if it was actually sent in the request
+    const dataToUpdate: Record<string, any> = {};
+    if (fullName !== undefined)  dataToUpdate.fullName  = fullName;
+    if (phone !== undefined)     dataToUpdate.phone     = phone;
+    if (address !== undefined)   dataToUpdate.address   = address;
+    if (state !== undefined)     dataToUpdate.state     = state;
+    if (city !== undefined)      dataToUpdate.city      = city;
+    if (zip !== undefined)       dataToUpdate.zip       = zip;
+    if (profilePicUrl)           dataToUpdate.profilePicUrl = profilePicUrl;
 
     const updatedUser = await prisma.user.update({
       where: { id: req.user.id },
-      data: dataToUpdate,
+      data: dataToUpdate,   // now only contains what was actually sent
     });
 
     return res.status(200).json({

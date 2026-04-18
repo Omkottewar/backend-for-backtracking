@@ -33,7 +33,7 @@ CREATE INDEX idx_trips_user_departure ON trips(user_id, departure_date_time);
 CREATE TABLE bags (
   id UUID PRIMARY KEY,
   trip_id UUID NOT NULL REFERENCES trips(id),
-  tag_number TEXT UNIQUE NOT NULL,
+  tag_number TEXT NOT NULL,
   description TEXT NOT NULL,
   image_path TEXT,
   weight_lbs NUMERIC(8,2) NOT NULL,
